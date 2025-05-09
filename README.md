@@ -30,22 +30,12 @@ npm install
 Configute el archivo `.env`:
 
 ```env
-NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
-BACKEND_API_URL=http://localhost:3001/api
+NEXT_PUBLIC_API_BASE_URL=http://backend:3001/api
+BACKEND_API_URL=http://backend:3001/api
 JWT_EXPIRES_IN=900
 ```
 
-Asegúrate que el backend esté disponible en esa dirección.
-
----
-
-## 🖥️ Ejecutar en desarrollo
-
-```bash
-npm run dev
-```
-
-El proyecto se abrirá en [http://localhost:3000](http://localhost:3000)
+Asegúrate que el backend esté corriendo.
 
 ---
 
