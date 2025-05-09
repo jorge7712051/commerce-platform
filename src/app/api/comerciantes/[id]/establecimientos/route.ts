@@ -4,7 +4,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = await params;
+  const { id } = await params;
   const res = await fetch(
     `${process.env.BACKEND_API_URL}/comerciantes/${id}/establecimientos`,
     {

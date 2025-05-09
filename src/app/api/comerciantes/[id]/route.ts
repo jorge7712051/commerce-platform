@@ -4,7 +4,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = await params;
+  const { id } = await params;
   const res = await fetch(`${process.env.BACKEND_API_URL}/comerciantes/${id}`, {
     headers: {
       Cookie: req.headers.get("cookie") || "",
@@ -18,7 +18,7 @@ export async function DELETE(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = await params;
+  const { id } = await params;
   const res = await fetch(`${process.env.BACKEND_API_URL}/comerciantes/${id}`, {
     method: "DELETE",
     headers: {
@@ -33,7 +33,7 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = await params;
+  const { id } = await params;
   const body = await req.json();
   const res = await fetch(`${process.env.BACKEND_API_URL}/comerciantes/${id}`, {
     method: "PUT",
