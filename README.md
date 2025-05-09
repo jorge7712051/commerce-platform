@@ -49,6 +49,13 @@ docker-compose up -d
 ```
 
 ---
+## 🧪 Endpoints
+
+Una vez levantado, accedé a la aplicación:
+
+📘 [http://localhost:3000](http://localhost:3000)
+
+---
 
 ## 🧪 Credenciales de acceso
 
