@@ -45,7 +45,16 @@ Asegúrate que el backend esté corriendo.
 2. Luego ejecuta:
 
 ```bash
-docker-compose up --build
+docker-compose up -d
+```
+
+---
+
+## 🧪 Credenciales de acceso
+
+```bash
+Correo: admin@crm.com
+Contraseña: admin123
 ```
 
 ---

@@ -2,12 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const id = await params;
   const body = await req.json();
 
   const res = await fetch(
-    `${process.env.BACKEND_API_URL}/comerciantes/${params.id}/estado`,
+    `${process.env.BACKEND_API_URL}/comerciantes/${id}/estado`,
     {
       method: "PATCH",
       headers: {
