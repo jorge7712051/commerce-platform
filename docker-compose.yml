@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  nextjs:
+    build: .
+    container_name: nextjs-app
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: ${NEXT_PUBLIC_API_BASE_URL}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true

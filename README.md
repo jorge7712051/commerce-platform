@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Comercio Frontend (Next.js)
 
-## Getting Started
+Este es el frontend de la plataforma de gestión de comerciantes, desarrollado con **Next.js**. Permite registrar, editar, listar y exportar información de comerciantes registrados, conectándose con un backend en **NestJS**.
 
-First, run the development server:
+## 📦 Requisitos
+
+- Node.js >= 18.x
+- Docker y Docker Compose (opcional, para levantar en contenedor)
+- Tener el backend corriendo antes de iniciar el frontend
+
+> **⚠️ Importante:** Este frontend depende del backend que debe estar corriendo en `http://localhost:3001` o en la URL especificada por `BACKEND_API_URL`.
+
+---
+
+## 🚀 Instalación local
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/jorge7712051/commerce-platform.git
+cd commerce-platform
+
+# Instalar dependencias
+npm install
+```
+
+---
+
+## ⚙️ Variables de entorno
+
+Configute el archivo `.env`:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3001/api
+BACKEND_API_URL=http://localhost:3001/api
+JWT_EXPIRES_IN=900
+```
+
+Asegúrate que el backend esté disponible en esa dirección.
+
+---
+
+## 🖥️ Ejecutar en desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El proyecto se abrirá en [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🐳 Ejecutar con Docker
 
-## Learn More
+1. Asegúrate de tener el backend corriendo (en contenedor o local).
+2. Luego ejecuta:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+docker-compose up --build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Scripts disponibles
 
-## Deploy on Vercel
+| Comando         | Descripción                            |
+| --------------- | -------------------------------------- |
+| `npm run dev`   | Ejecuta el servidor en modo desarrollo |
+| `npm run build` | Compila la aplicación para producción  |
+| `npm start`     | Inicia el servidor en producción       |
+| `npm run lint`  | Ejecuta el linter                      |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📁 Estructura del proyecto
+
+```
+├── app/                    # Rutas y APIs locales
+├── components/             # Componentes reutilizables
+├── context/                # Contexto global (Auth)
+├── interfaces/             # Tipos e interfaces TypeScript
+├── lib/                    # Lógica para consumir APIs
+├── public/                 # Archivos estáticos
+└── styles/                 # Estilos globales
+```
+
+---
+
+## 📌 Notas
+
+- El token JWT se guarda como cookie segura y se usa para autenticar las solicitudes.
+- Asegúrate de tener las rutas del backend funcionando como `/comerciantes`, `/auth/login`, etc.
+
+---
+
+## 👨‍⚕️ Autor
+
+Desarrollado por Jorge leonardo Correa.
+
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia MIT.
